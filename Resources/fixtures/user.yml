@@ -1,0 +1,19 @@
+App\Entity\Master:
+    master_{1..10}:
+        firstname: <firstName()>
+        lastname: <lastName()>
+        email: <email()>
+        
+App\Entity\Company:
+    company_{0..12}:
+        master: '@master*'
+        name: <name()>
+        phoneNumber: <phoneNumber()>
+        adress: <sentence()>
+
+App\Entity\Creditcard:
+    creditcard_{0..12}:
+        company: '@company*'
+        creditCardNumber: <creditCardNumber()>
+        creditCardType: <creditCardType()>
+        name: <name()>
